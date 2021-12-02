@@ -1,3 +1,5 @@
 !*.rs
 .bin
 2021/1/input.txt
+target
+*.lock
