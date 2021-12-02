@@ -8,10 +8,11 @@ fn main() {
         .map(|n| re.captures(n).unwrap())
         .fold((0, 0), |last, x| {
             let (mut hor, mut dep) = last;
+            let value = x[2].parse::<i32>().unwrap();
             match &x[1] {
-                "forward" => { hor += x[2].parse::<i32>().unwrap() },
-                "down" => { dep += x[2].parse::<i32>().unwrap() },
-                "up" => { dep -= x[2].parse::<i32>().unwrap() },
+                "forward" => { hor += value },
+                "down" => { dep += value },
+                "up" => { dep -= value },
                 _ => {},
             }
             (hor, dep)
